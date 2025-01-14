@@ -1,0 +1,41 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: demo
+      MYSQL_DATABASE: wiss_quiz
+      MYSQL_USER: wiss_quiz
+      MYSQL_PASSWORD: SASDsfdsf232413L
+    volumes:
+      - demo-data:/var/lib/mysql
+
+  caddy_proxy:
+    image: caddy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+  frontend:
+    image: m210-frontend:1.0
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    image: m210-backend:1.0
+    depends_on:
+      - mysql-db
+    environment:
+      MYSQL_HOST: mysql-db
+
+volumes:
+  demo-data:
+  caddy_data:
+  caddy_config:
