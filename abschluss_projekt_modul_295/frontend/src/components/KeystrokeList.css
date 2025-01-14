@@ -1,0 +1,82 @@
+.KeystrokeList {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.KeystrokeList h3 {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.KeystrokeList button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.KeystrokeList button:hover {
+    background-color: #0056b3;
+}
+
+.KeystrokeList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.KeystrokeList li {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.KeystrokeList h4 {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
+    font-weight: bold;
+}
+
+.KeystrokeList p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+/* KeystrokeList.css & SessionList.css */
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.popup button {
+    margin-right: 5px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test mit STOMP</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+</head>
+<body>
+    <h1>WebSocket Test mit STOMP</h1>
+    <h2>Diese Web-Anwendung emuliert den Desktop MainApp.exe</h2>
+    <button id="createSession">Session erstellen</button>
+    <button id="sendKeystroke" disabled>Keystroke(Daten) senden</button>
+    <p id="response"></p>
+    <p id="sessionIdDisplay"></p> <!-- Anzeige der Session-ID -->
+
+    <script>
+        let stompClient = null;
+        let currentSessionId = null;
+
+        function connect() {
+            const socket = new SockJS('http://localhost:8080/ws'); // Verbindung zum WebSocket-Server
+            stompClient = Stomp.over(socket);
+
+            stompClient.connect({}, function(frame) {
+                console.log('Connected: ' + frame);
+                stompClient.subscribe('/topic/keystrokes', function(keystroke) {
+                    document.getElementById('response').innerText = "Daten wurden in der Datenbank gespeichert";
+                });
+            });
+        }
+
+        // Session erstellen
+        document.getElementById('createSession').addEventListener('click', function() {
+            fetch('http://localhost:8080/createSession?userId=1') // Ersetze "1" mit der Benutzer-ID
+                .then(response => response.text())
+                .then(sessionId => {
+                    currentSessionId = sessionId; // Setze die aktuelle Session-ID
+                    document.getElementById('sessionIdDisplay').innerText = "Aktuelle Session-ID: " + currentSessionId;
+                    document.getElementById('sendKeystroke').disabled = false; // Aktiviere den Keystroke-Button
+                })
+                .catch(error => console.error('Fehler beim Erstellen der Session:', error));
+        });
+
+        // Keystroke senden
+        document.getElementById('sendKeystroke').addEventListener('click', function() {
+            if (currentSessionId) {
+                const keystrokeData = {
+                    session: { sessionId: currentSessionId }, 
+                    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                    action: "crypto.com, gate.io, binance"
+                };
+                stompClient.send("/app/keystroke", {}, JSON.stringify(keystrokeData));
+            }
+        });
+        // Verbindung beim Laden der Seite herstellen
+        window.onload = connect;
+    </script>
+</body>
+</html>
