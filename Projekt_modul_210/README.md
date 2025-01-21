@@ -7,7 +7,7 @@ Eine minimalistische Web-App, wo der Nutzer schnell und unkompliziert Artikel er
 Ein Benutzer hat ein Konto, von dem aus Artikel erstellt werden. Theoretisch werden dafür nur zwei Tabellen benötigt: eine für Benutzerkonten und eine für Artikel. Zusätzliche Tabellen können hinzugefügt werden. Die Artikel werden so angezeigt, sodass es ersichtlich ist, welcher Benutzer sie publiziert hat.
 
 
-# Projektbeschreibung: Minimalistische Web-App für Artikelverwaltung
+### Projektbeschreibung: Minimalistische Web-App für Artikelverwaltung
 
 ## **User Stories**
 
