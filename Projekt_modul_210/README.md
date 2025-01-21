@@ -69,11 +69,11 @@ Ein Benutzer hat ein Konto, von dem aus Artikel erstellt werden. Theoretisch wer
 | **Dokumentation**                   | Die Dokumentation konnte ich nicht rechtzeitig abschliessen und musste sie daher am Ende nachholen. |                    |
 | **Deployment**                      | Alle Features, wie Login, Erstellung, Löschung und Aktualisierung von Artikeln, funktionieren und unterscheiden sich je nach Nutzer. | Die Grundziele wurden erreicht. |
 
+![alt text](<Screenshot 2025-01-21 174703.png>)
+
 ## Die Architektur des Projekts
 
 Das Ziel war, eine serverlose Fullstack-App zu entwickeln, die einfach nachvollziehbar ist. Das Frontend wurde nicht mit einem kompletten React-Framework, sondern mit einer minimalen und reinen Implementierung in React JS erstellt. Als Datenbank wurde SQL verwendet.  
-
----
 
 ## Deployment
 
@@ -84,11 +84,9 @@ Um die App zu starten, müssen folgende Schritte durchgeführt werden:
 4. Eine Policy für Anfragen konfigurieren, die wie folgt definiert ist:  
    ```sql
    (user_id = auth.uid())
-```
+
 
 ## kritischer Review
 
 Das Projekt konnte ich zwar abschliessen, allerdings erst in letzter Minute. Daher denke ich, dass meine Zeitplanung fehlerhaft war und beim nächsten Mal mehr Beachtung finden sollte. Einige Features konnte ich aufgrund von Zeitmangel nicht umsetzen, und für zusätzliche Ideen blieb ebenfalls keine Zeit. Dennoch funktioniert das Projekt vollständig. Einige Aspekte könnten jedoch bei einer zukünftigen Planung verbessert werden.
-
-
 
