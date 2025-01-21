@@ -67,3 +67,5 @@ Ein Benutzer hat ein Konto, von dem aus Artikel erstellt werden. Theoretisch wer
 |                                     |                                                                                                  |                    |
 |                                     |                                                                                                  |                    |
 |                                     |                                                                                                  |                    |
+
+![alt text](<Screenshot 2025-01-21 174703.png>)
