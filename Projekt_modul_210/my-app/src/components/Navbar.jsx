@@ -35,22 +35,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={{ display: "flex", justifyContent: "space-between", padding: "1rem" }}>
+    <nav style={{ display: "flex", justifyContent: "space-between", padding: "5rem", background: "rgba(91, 97, 222, 0.49)", margin: "5rem", borderRadius: "5rem" }}>
       <div>
-        <Link to="/">Home</Link>
-        {session && <Link to="/posts" style={{ marginLeft: "1rem" }}>Artikel ansehen</Link>}
-      </div>
-      <div>
-        {session ? (
-          <div>
-            <span>Angemeldet als: {session.user.email}</span>
-            <button onClick={handleLogout} style={{ marginLeft: "1rem" }}>
-              Logout
-            </button>
-          </div>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
+        <div>
+          <Link to="/">Home</Link>
+          {session && <Link to="/posts" style={{ marginLeft: "1rem" }}>Artikel ansehen</Link>}
+        </div>
+        <div>
+          {session ? (
+            <div>
+              <span>Angemeldet als: {session.user.email}</span>
+              <button onClick={handleLogout} style={{ marginLeft: "1rem" }}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
+        </div>
       </div>
     </nav>
   );

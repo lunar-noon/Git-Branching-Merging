@@ -41,7 +41,7 @@ const Home = () => {
 
   if (!session) {
     return (
-      <div>
+      <div style={{margin: "5rem", padding: "0rem 5rem 0rem 5rem"}}>
         <h1>Willkommen auf der Artikelübersicht</h1>
         <p>Bitte logge dich ein oder registriere dich, um fortzufahren.</p>
         <div>
@@ -52,7 +52,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div style={{margin: "5rem", padding: "0rem 5rem 0rem 5rem"}}>
       <h1>Artikel Übersicht</h1>
       <div>
         <Link to="/create">Neuen Artikel erstellen</Link>
