@@ -48,7 +48,7 @@ Ein Benutzer hat ein Konto, von dem aus Artikel erstellt werden. Theoretisch wer
 
 | **Schritt**                         | **Beschreibung**                                                                                  | **Zeitschätzung** |
 |-------------------------------------|--------------------------------------------------------------------------------------------------|--------------------|
-| Projekt-Setup & Idee                    | Initiales Setup der Web-App mit grundlegenden Tools und Frameworks                              | 30 min            |
+| Projekt-Setup & Idee                    | Initiales Setup der Web-App mit grundlegenden Tools und Frameworks                              | 20 min           |
 | User Stories und Akzeptanzkriterien     | Realistische Stories mit erreichbaren Zielen                                                      | 30 min            |
 | Datenbankstruktur und Logik            | Tabellen für Benutzerkonten und Artikel erstellen                                               | 20 min            |
 | Web-App inkl. Testing               | Gesamte Web-App mit benutzerfreundlichem UI                                                       | 5 h               |
@@ -57,13 +57,38 @@ Ein Benutzer hat ein Konto, von dem aus Artikel erstellt werden. Theoretisch wer
 
 **Gesamtdauer:** 7,4 h
 
-## Leere Tabelle für zukünftige Arbeitsschritte
+
+# Projektübersicht
 
 | **Schritt**                         | **Beschreibung**                                                                                  | **Zeitschätzung** |
 |-------------------------------------|--------------------------------------------------------------------------------------------------|--------------------|
-|                                     |                                                                                                  |                    |
-|                                     |                                                                                                  |                    |
-|                                     |                                                                                                  |                    |
-|                                     |                                                                                                  |                    |
-|                                     |                                                                                                  |                    |
-|                                     |                                                                                                  |                    |
+| **Projekt-Setup & Idee**            | Die Idee und das allgemeine Ziel konnten relativ schnell definiert werden.                        | Die Suche nach der Idee hat bei mir etwas länger gedauert als erwartet. |
+| **User Stories und Akzeptanzkriterien** | Ich habe nur grundlegende Aspekte der App mit User Stories beschrieben.                            | Nicht alle User Stories konnten umgesetzt werden, z. B. Punkte 5 und 7 der ersten User Story. Der Grund dafür war meine falsche Einschätzung des Zeitplans. |
+| **Datenbankstruktur und Logik**     | Gegen Ende des Projekts musste ich die Datenbankstruktur leicht ändern, da ich die Architektur von Supabase missverstanden hatte.        |                    |
+| **Web-App inkl. Testing**           | Ich habe hier relativ viel Zeit verloren, weil ich die App anders gestalten wollte. Aufgrund einiger Pakete musste ich das Projekt jedoch komplett neu beginnen. |                    |
+| **Dokumentation**                   | Die Dokumentation konnte ich nicht rechtzeitig abschliessen und musste sie daher am Ende nachholen. |                    |
+| **Deployment**                      | Alle Features, wie Login, Erstellung, Löschung und Aktualisierung von Artikeln, funktionieren und unterscheiden sich je nach Nutzer. | Die Grundziele wurden erreicht. |
+
+## Die Architektur des Projekts
+
+Das Ziel war, eine serverlose Fullstack-App zu entwickeln, die einfach nachvollziehbar ist. Das Frontend wurde nicht mit einem kompletten React-Framework, sondern mit einer minimalen und reinen Implementierung in React JS erstellt. Als Datenbank wurde SQL verwendet.  
+
+---
+
+## Deployment
+
+Um die App zu starten, müssen folgende Schritte durchgeführt werden:  
+1. Die benötigten Pakete installieren.  
+2. Die Tabellen in Supabase erstellen.  
+3. Die RLS (Row Level Security) für die `articles`-Tabelle deaktivieren.  
+4. Eine Policy für Anfragen konfigurieren, die wie folgt definiert ist:  
+   ```sql
+   (user_id = auth.uid())
+```
+
+## kritischer Review
+
+Das Projekt konnte ich zwar abschliessen, allerdings erst in letzter Minute. Daher denke ich, dass meine Zeitplanung fehlerhaft war und beim nächsten Mal mehr Beachtung finden sollte. Einige Features konnte ich aufgrund von Zeitmangel nicht umsetzen, und für zusätzliche Ideen blieb ebenfalls keine Zeit. Dennoch funktioniert das Projekt vollständig. Einige Aspekte könnten jedoch bei einer zukünftigen Planung verbessert werden.
+
+
+
