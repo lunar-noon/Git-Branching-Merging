@@ -84,6 +84,8 @@ Um die App zu starten, müssen folgende Schritte durchgeführt werden:
 4. Eine Policy für Anfragen konfigurieren, die wie folgt definiert ist:  
    ```sql
    (user_id = auth.uid())
+   ```
+5. Vergessen Sie nicht, Ihren Key und die URL von Supabase einzugeben.
 
 
 ## kritischer Review
