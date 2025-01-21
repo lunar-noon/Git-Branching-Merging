@@ -44,7 +44,7 @@ const AuthForm = ({ isRegistering }) => {
   };
 
   return (
-    <div>
+    <div style={{margin: "5rem", padding: "0rem 5rem 0rem 5rem"}}>
       <h2>{isRegistering ? 'Registrierung' : 'Anmeldung'}</h2>
       <form onSubmit={handleSubmit}>
         <input

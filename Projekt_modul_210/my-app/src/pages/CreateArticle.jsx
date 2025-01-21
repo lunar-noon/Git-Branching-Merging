@@ -64,7 +64,7 @@ const CreateArticle = () => {
   };
 
   return (
-    <div>
+    <div style={{margin: "5rem", padding: "0rem 5rem 0rem 5rem"}}>
       <h2>Neuen Artikel erstellen</h2>
       <form onSubmit={handleSubmit}>
         <input

@@ -23,7 +23,7 @@ const Posts = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{margin: "5rem", padding: "0rem 5rem 0rem 5rem"}}>
       <h2>Alle Artikel</h2>
       {articles.length > 0 ? (
         <ul>

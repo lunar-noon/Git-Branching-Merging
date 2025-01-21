@@ -24,7 +24,7 @@ const DeleteArticle = ({ articleId }) => {
   };
 
   return (
-    <div>
+    <div style={{margin: "5rem", padding: "0rem 5rem 0rem 5rem"}}>
       <button onClick={handleDelete}>Artikel löschen</button>
     </div>
   );
